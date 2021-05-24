@@ -1,5 +1,4 @@
 import axios from "axios";
-import { type } from "node:os";
 import { Dispatch } from "redux";
 import { ProductsActionTypes, PRODUCTS_LOADING, PRODUCTS_LOADING_FAIL, PRODUCTS_LOADING_SUCCESS } from "../types/ProductActionTypes"
 

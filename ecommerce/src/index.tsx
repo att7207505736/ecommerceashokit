@@ -8,9 +8,7 @@ import ProductReducer from './reducer/ProductReducer';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 
-const store = createStore(ProductReducer,applyMiddleware(thunk));
-
-
+const store=createStore(ProductReducer,applyMiddleware(thunk));
 ReactDOM.render(
   <Provider store={store}>
     <App />
