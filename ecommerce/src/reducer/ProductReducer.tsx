@@ -12,7 +12,7 @@ const initialState:IState={
     error:""
 }
 
-const ProductReducer=(state=initialState,action:ProductsActionTypes)=>{
+const ProductReducer=(state=initialState,action:ProductsActionTypes):IState=>{
     switch(action.type){
         case PRODUCTS_LOADING:
         case PRODUCTS_LOADING_SUCCESS:
