@@ -10,7 +10,7 @@ class LoadingBox extends Component<IProps,IState>{
     render(){
         return(
             <React.Fragment>
-                <i className="fas fa-sync fa-spin"></i>
+                <i className="fa fa-spinner fa-spin " ></i>
             </React.Fragment>
         )
     }

@@ -2,6 +2,9 @@ import React from "react";
 import { Component } from "react";
 import { connect } from "react-redux";
 import getProducts from "../actions/ProductAction";
+import LoadingBox from "../components/LoadingBox";
+import MessageBox from "../components/MessageBox";
+import Products from "../components/Products";
 
 interface IState{
 
@@ -25,8 +28,12 @@ class HomeScreen extends Component<IProps,IState>{
     
     return(
     <React.Fragment>
-      <h1>Items</h1>
-      <h3>{JSON.stringify(loading)}....{JSON.stringify(products)}....{error}</h3>
+      
+      {
+        !loading?(<LoadingBox></LoadingBox>):
+        error==="Network Error"?(<MessageBox variant="danger">{error}</MessageBox>):
+        (<Products arr={products}></Products>)
+      }
 
     </React.Fragment>
     )

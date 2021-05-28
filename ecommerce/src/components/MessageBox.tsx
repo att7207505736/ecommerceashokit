@@ -6,7 +6,7 @@ interface IProps{
 };
 interface IState{};
 
-class MessageBox extends Component<>{
+class MessageBox extends Component<IProps,IState>{
     constructor(props:IProps){
         super(props);
     };
