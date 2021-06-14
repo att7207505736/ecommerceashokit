@@ -7,10 +7,14 @@ import { applyMiddleware, combineReducers, createStore } from 'redux';
 import ProductReducer from './reducer/ProductReducer';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
+import detailReducer from './reducer/DetailReducer';
+import CartReducer from './reducer/CartReducer';
 
 const rootResurce = combineReducers({
-    products : ProductReducer
-})
+    products : ProductReducer,
+    details : detailReducer,
+    cart : CartReducer
+});
 
 const store=createStore(rootResurce,applyMiddleware(thunk));
 ReactDOM.render(

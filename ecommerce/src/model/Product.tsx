@@ -3,12 +3,12 @@ interface Product{
     "name":string;
     "brand":string;
     "price":number;
-    "qty":number;
-    "countInStock":number;
+    "countInstock":number;
     "image":string;
     "rating":number;
     "description":string;
     "numReviews": number;
+    "qty" : number;
     
 
 };
