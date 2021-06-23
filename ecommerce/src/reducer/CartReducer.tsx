@@ -14,6 +14,13 @@ const CartReducer = (state=initialState,action:CartActionTypes):IState=>{
     switch(action.type){
         case ADD_ITEM:
             const item=action.selectadItem;
+            
+            if(item._id==="" || item.qty===0){
+                return {...state}
+            }           
+
+            
+            
             const existedItem=state.finalArray.find((obj)=>{return obj._id===item._id});
             if(existedItem){
                 return{

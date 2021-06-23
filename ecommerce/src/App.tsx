@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import './App.css';
 import HomeScreen from './screens/HomeScreen';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {  faCartPlus } from '@fortawesome/free-solid-svg-icons'
+import {  faCartPlus, faSignInAlt } from '@fortawesome/free-solid-svg-icons'
 import { BrowserRouter as Router, NavLink, Route , } from "react-router-dom";
 import ProductScreen from './screens/ProductScreen';
 import CartScreen from './screens/CartScreen';
 import { connect} from "react-redux";
+
 interface IState{}
 interface IProps{
    count:any;
@@ -30,7 +31,7 @@ class App extends Component<IProps,IState> {
                      <NavLink to="/cart" exact={true} strict><FontAwesomeIcon icon={faCartPlus} /> My Cart
                      {this.props.count>0 ? (<span className="badge-success">{this.props.count}</span>) : (<span className="badge-empty">{this.props.count}</span>) }
                      </NavLink>
-                      <NavLink to="/" exact={true} strict>SignIn</NavLink>
+                      <NavLink to="/" exact={true} strict><FontAwesomeIcon icon={faSignInAlt} /> SignIn</NavLink>
                   </div>
  
                </header>
@@ -38,7 +39,7 @@ class App extends Component<IProps,IState> {
                <main>
                <Route path="/" component={HomeScreen} exact={true} strict></Route>
                <Route path="/product/:id" component={ProductScreen} exact={true} strict></Route>
-               <Route path="/cart/:id" component={CartScreen} exact={true} strict></Route>
+               <Route path="/cart/:id?" component={CartScreen} exact={true} strict></Route>
                </main>
  
                <footer className="row center">
